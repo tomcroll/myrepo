@@ -1,0 +1,7 @@
+#!/usr/bin/env node
+
+function feedCat(){
+    alert("Meme, tinned food and water");
+}
+
+alert(feedCat instanceof Object);

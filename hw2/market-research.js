@@ -43,7 +43,7 @@ var marketCapFloat = function(marketCapString) {
 };
 
 var csv2console = function(csvfile, headers) {
-    console.log(headers.join("\t"));
+    console.log(headers.join("\t\t"));
     csv()
     .from.path(csvfile)
     .on('record', function(row, index) {
@@ -51,7 +51,7 @@ var csv2console = function(csvfile, headers) {
         var eps = (row[3]/row[4]).toFixed(3);
         var earnings = accounting.formatMoney(eps * shares);
         outrow = row.concat([shares, eps, earnings]);
-        console.log(outrow.join("\t"));
+        console.log(outrow.join("\t\t"));
     });
 };
 
